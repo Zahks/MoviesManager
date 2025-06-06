@@ -1,0 +1,15 @@
+<!-- Filtres -->
+<app-filtres (filtreChange)="onFiltreChange($event)"></app-filtres>
+
+<!-- Liste des films filtrés -->
+<div class="row">
+  <ng-container *ngIf="filteredFilms() as films">
+    <div class="col-6" *ngFor="let film of films">
+      <app-card-film [film]="film"></app-card-film>
+    </div>
+
+    <div *ngIf="films.length === 0" class="alert alert-warning text-center">
+      Aucun film ne correspond à vos filtres 😢
+    </div>
+  </ng-container>
+</div>

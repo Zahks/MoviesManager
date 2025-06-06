@@ -1,0 +1,23 @@
+<div class="card h-100">
+  <div class="card-body">
+   <h5 class="card-title">
+  <a [routerLink]="['/films', film.id]">{{ film.titre }} ({{ film.annee }})</a>
+</h5>
+
+    <h6 class="card-subtitle text-muted mb-2">{{ film.genre }}</h6>
+
+    <p class="card-text" [innerHTML]="film.synopsis | truncate:100:film.id"></p>
+
+
+    <span class="badge bg-primary">Note : {{ film.note }}/5 ⭐</span>
+
+    <div class="mt-3">
+      <button 
+  class="btn"
+  [ngClass]="film.vu ? 'btn-secondary' : 'btn-success'"
+  (click)="toggleVu()">
+  {{ film.vu ? 'Déjà vu ✔️' : 'Vu !' }}
+</button>
+    </div>
+  </div>
+</div>

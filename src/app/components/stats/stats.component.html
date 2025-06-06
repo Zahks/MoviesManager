@@ -1,0 +1,34 @@
+<div class="container mt-4">
+  <h2>📊 Statistiques</h2>
+
+  <div class="row mt-3">
+    <div class="col-md-6">
+      <div class="alert alert-primary">
+        🎞️ Total de films : <strong>{{ totalFilms() }}</strong>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="alert alert-success">
+        👁️ Films vus : <strong>{{ filmsVus() }}</strong>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="alert alert-info">
+        ⭐ Moyenne des notes : <strong>{{ moyenneNote() }}</strong>/5
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="alert alert-warning">
+        🎭 Répartition par genre :
+        <ul class="mb-0">
+          <li *ngFor="let genre of genresKeys()">
+            {{ genre }} : {{ repartitionParGenre()[genre] }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

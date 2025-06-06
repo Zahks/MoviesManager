@@ -1,0 +1,17 @@
+<div class="row mb-4">
+  <div class="col-md-6">
+    <label>Filtrer par genre :</label>
+    <select class="form-select" [(ngModel)]="genre" (change)="emitFiltres()">
+      <option value="">Tous</option>
+      <option value="Action">Action</option>
+      <option value="Science-fiction">Science-fiction</option>
+      <option value="Drame">Drame</option>
+      <option value="Comédie">Comédie</option>
+    </select>
+  </div>
+
+  <div class="col-md-6">
+    <label>Note minimale : {{ noteMin }}</label>
+    <input type="range" min="0" max="5" [(ngModel)]="noteMin" (input)="emitFiltres()" />
+  </div>
+</div>

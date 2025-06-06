@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <h2>Ajouter un film</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Titre</label>
+      <input type="text" class="form-control" formControlName="titre" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Année</label>
+      <input type="number" class="form-control" formControlName="annee" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Genre</label>
+      <input type="text" class="form-control" formControlName="genre" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Note (0 à 5)</label>
+      <input type="number" class="form-control" formControlName="note" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Synopsis</label>
+      <textarea class="form-control" rows="3" formControlName="synopsis"></textarea>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="form.invalid">
+      Ajouter
+    </button>
+  </form>
+</div>
